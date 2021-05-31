@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from '../pages/Main'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
 import Navbar from '../components/Navbar'
 
 const AppRouter = () => {
