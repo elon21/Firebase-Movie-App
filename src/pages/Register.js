@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { createUser } from '../auth/firebase';
 
 const Register = () => {
     const [firstName, setFirstName] = useState("");
@@ -7,6 +8,10 @@ const Register = () => {
     const [password, setPassword] = useState("");
 
     console.log({firstName, lastName, email, password});
+
+    const handleRegister = () => {
+        createUser(email, password);
+    }
 
     return (
         <div className="register">
@@ -32,7 +37,7 @@ const Register = () => {
                         <label for="password" className="form-label display-4">Password</label>
                         <input type="password" className="form-control" id="password" placeholder="Enter your password address..." onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <input type="button" className="btn btn-primary form-control" value="Register" />
+                    <input type="button" className="btn btn-primary form-control" value="Register" onClick={handleRegister}/>
                 </form>
             </div>
         </div>
