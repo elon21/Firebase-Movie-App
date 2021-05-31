@@ -1,6 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Register = () => {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    console.log({firstName, lastName, email, password});
+
     return (
         <div className="register">
             <div className="form-image">
@@ -11,19 +18,19 @@ const Register = () => {
                 <form id="register">
                     <div className="mb-3">
                         <label for="first-name" className="form-label display-4">First Name</label>
-                        <input type="first-name" className="form-control" id="first-name" placeholder="Enter your first name..." />
+                        <input type="first-name" className="form-control" id="first-name" placeholder="Enter your first name..." onChange={e => setFirstName(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="last-name" className="form-label display-4">Last Name</label>
-                        <input type="last-name" className="form-control" id="last-name" placeholder="Enter your last name..." />
+                        <input type="last-name" className="form-control" id="last-name" placeholder="Enter your last name..." onChange={e => setLastName(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="email" className="form-label display-4">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter your email address..." />
+                        <input type="email" className="form-control" id="email" placeholder="Enter your email address..." onChange={e => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="password" className="form-label display-4">Password</label>
-                        <input type="password" className="form-control" id="password" placeholder="Enter your password address..." />
+                        <input type="password" className="form-control" id="password" placeholder="Enter your password address..." onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <input type="button" className="btn btn-primary form-control" value="Register" />
                 </form>

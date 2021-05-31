@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <div className="register">
             <div className="register-form">
@@ -8,11 +11,11 @@ const Login = () => {
                 <form id="login">
                     <div className="mb-3">
                         <label for="email" className="form-label display-4">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter your email address..." />
+                        <input type="email" className="form-control" id="email" placeholder="Enter your email address..." onChange={e => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="password" className="form-label display-4">Password</label>
-                        <input type="password" className="form-control" id="password" placeholder="Enter your password address..." />
+                        <input type="password" className="form-control" id="password" placeholder="Enter your password address..." onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <input type="button" className="btn btn-primary form-control" value="Login" />
                 </form>
